@@ -1,5 +1,6 @@
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
+import passwords
 import arinListen as AL
 import time
 
@@ -59,10 +60,10 @@ def asks(asking):
         browser.get('https://www.instagram.com')
         time.sleep(2)
         browser.find_element_by_xpath(
-            '//*[@id="loginForm"]/div/div[1]/div/label/input').send_keys('g.ibrahim.r')
+            '//*[@id="loginForm"]/div/div[1]/div/label/input').send_keys(passwords.instagramUser)
         time.sleep(2)
         browser.find_element_by_xpath(
-            '//*[@id="loginForm"]/div/div[2]/div/label/input').send_keys('130419IG', Keys.ENTER)
+            '//*[@id="loginForm"]/div/div[2]/div/label/input').send_keys(passwords.instagramPassword, Keys.ENTER)
         AL.arinListen('ihtiyacın olursa seslen.'.lower())
         while True:
             shutdown = 0
@@ -93,10 +94,10 @@ def asks(asking):
         browser.get('https://www.facebook.com')
         time.sleep(2)
         browser.find_element_by_xpath(
-            '//*[@id="email"]').send_keys('ibrahim_guler_ask@hotmail.com')
+            '//*[@id="email"]').send_keys(passwords.fecebookUser)
         time.sleep(2)
         browser.find_element_by_xpath(
-            '//*[@id="pass"]').send_keys('130419SI', Keys.ENTER)
+            '//*[@id="pass"]').send_keys(passwords.fecebookPassword, Keys.ENTER)
         AL.arinListen('ihtiyacın olursa seslen.'.lower())
         while True:
             shutdown = 0
